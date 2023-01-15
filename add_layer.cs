@@ -29,7 +29,7 @@ namespace autokad_test_dll_15_01_2023
                 // блокируем документ
                 using (DocumentLock docloc = acDoc.LockDocument())
                 {
-                    for (int i = 0; i < 1000; i++)
+                    for (int i = 0; i < 40000; i++)
                     {
 
 
