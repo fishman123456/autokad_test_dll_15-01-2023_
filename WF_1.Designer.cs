@@ -1,6 +1,6 @@
 ﻿namespace autokad_test_dll_15_01_2023
 {
-    partial class Form1
+    partial class WF_1
     {
         /// <summary>
         /// Required designer variable.

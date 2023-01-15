@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace autokad_test_dll_15_01_2023
 {
-    public partial class Form1 : Form
+    public partial class WF_1 : Form
     {
-        public Form1()
+        public WF_1()
         {
             InitializeComponent();
         }

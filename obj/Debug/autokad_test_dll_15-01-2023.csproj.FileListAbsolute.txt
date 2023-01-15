@@ -21,9 +21,9 @@ C:\Users\Fishman_1\Documents\GitHub\autokad_test_dll_15-01-2023\bin\Debug\ru-RU\
 C:\Users\Fishman_1\Documents\GitHub\autokad_test_dll_15-01-2023\bin\Debug\ru-RU\AcMr.resources.dll
 C:\Users\Fishman_1\Documents\GitHub\autokad_test_dll_15-01-2023\bin\Debug\ru-RU\AcWindows.resources.dll
 C:\Users\Fishman_1\Documents\GitHub\autokad_test_dll_15-01-2023\obj\Debug\autokad_test_dll_15-01-2023.csproj.AssemblyReference.cache
-C:\Users\Fishman_1\Documents\GitHub\autokad_test_dll_15-01-2023\obj\Debug\autokad_test_dll_15_01_2023.Form1.resources
 C:\Users\Fishman_1\Documents\GitHub\autokad_test_dll_15-01-2023\obj\Debug\autokad_test_dll_15-01-2023.csproj.GenerateResource.cache
 C:\Users\Fishman_1\Documents\GitHub\autokad_test_dll_15-01-2023\obj\Debug\autokad_test_dll_15-01-2023.csproj.CoreCompileInputs.cache
 C:\Users\Fishman_1\Documents\GitHub\autokad_test_dll_15-01-2023\obj\Debug\autokad_test_dll_15-01-2023.csproj.CopyComplete
 C:\Users\Fishman_1\Documents\GitHub\autokad_test_dll_15-01-2023\obj\Debug\autokad_test_dll_15-01-2023.dll
 C:\Users\Fishman_1\Documents\GitHub\autokad_test_dll_15-01-2023\obj\Debug\autokad_test_dll_15-01-2023.pdb
+C:\Users\Fishman_1\Documents\GitHub\autokad_test_dll_15-01-2023\obj\Debug\autokad_test_dll_15_01_2023.WF_1.resources
