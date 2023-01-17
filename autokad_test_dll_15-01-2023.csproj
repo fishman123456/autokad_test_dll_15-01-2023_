@@ -55,6 +55,7 @@
     <Compile Include="add_layer.cs" />
     <Compile Include="For_WF.cs" />
     <Compile Include="LayoutHernummeren.cs" />
+    <Compile Include="Layout_WF_void.cs" />
     <Compile Include="WF_1.cs">
       <SubType>Form</SubType>
     </Compile>
