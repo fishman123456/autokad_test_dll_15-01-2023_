@@ -13,8 +13,8 @@ namespace autokad_test_dll_15_01_2023
 {
    public class Layout_WF_void
     {
-        // [CommandMethod("Lay_WF_Renum")]
-      public  List<String> list_layout { get; set; }
+         [CommandMethod("Lay_WF_Renum")]
+      //public  List<String> list_layout { get; set; }
 
 
         public static void Cmd_Lay_Renum()
@@ -58,18 +58,14 @@ namespace autokad_test_dll_15_01_2023
 
                         //    }
                         //}
-                    }
-                    
+                    }  
                     trans.Commit();
-
                 }
             }
-
             catch (System.Exception ex)
             {
                 edt.WriteMessage("\nError >> " + ex.Message);
             }
-
         }
     }
 }

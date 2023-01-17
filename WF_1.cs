@@ -32,7 +32,7 @@ namespace autokad_test_dll_15_01_2023
         {
            Layout_WF_void op = new Layout_WF_void();
              Layout_WF_void.Cmd_Lay_Renum();
-
+            listBox1.Items.Add("8855");
 
 
         }
