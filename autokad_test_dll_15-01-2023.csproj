@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="add_layer.cs" />
+    <Compile Include="Class_List.cs" />
     <Compile Include="For_WF.cs" />
     <Compile Include="LayoutHernummeren.cs" />
     <Compile Include="Layout_WF_void.cs" />
