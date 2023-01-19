@@ -30,11 +30,11 @@ namespace autokad_test_dll_15_01_2023
 
         private void WF_1_Load(object sender, EventArgs e)
         {
-           Layout_WF_void op = new Layout_WF_void();
-            
-            listBox1.Items.Add("8855");
-
-
+            foreach (var item in Layout_WF_void.list_layout)
+            {
+                listBox1.Items.Add( item.ToString());
+            }
+            // Урааа заработало 19-01-2023
         }
     }
 }

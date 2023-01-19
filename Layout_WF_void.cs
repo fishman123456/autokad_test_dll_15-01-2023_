@@ -9,24 +9,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace autokad_test_dll_15_01_2023
 {
     public class Layout_WF_void
     {
+        public static List<String> list_layout = new List<String>();
         [CommandMethod("Lay_WF_Renum")]
         //public  List<String> list_layout { get; set; }
 
 
-        public static void Cmd_Lay_Renum()
+        public  void Cmd_Lay_Renum()
         {
-            Document doc = Application.DocumentManager.MdiActiveDocument;
+            Document doc = Autodesk.AutoCAD.ApplicationServices.Application.DocumentManager.MdiActiveDocument;
             Editor edt = doc.Editor;
             Database db = doc.Database;
-
+           
             string oldName;
             string newName;
-            List<String> list_layout = new List<String>();
+            
             bool model = true;
 
             try
@@ -39,9 +41,9 @@ namespace autokad_test_dll_15_01_2023
                     {
                         Layout layout = trans.GetObject((ObjectId)layoutEntry.Value, OpenMode.ForRead) as Layout;
                         layout.UpgradeOpen();
-                        //list_layout.Add(layout.LayoutName.ToString());
-                        Class_List first = new Class_List();
-                        first.list_li.Add(layout.LayoutName.ToString());
+                        list_layout.Add(layout.LayoutName.ToString());
+                       
+                      
                         //код для изменения имён листов-------
                         //https://stackoverflow.com/questions/72216779/renaming-layout-tab-autocad-c-sharp-net
                         //oldName = layout.LayoutName;
@@ -62,12 +64,15 @@ namespace autokad_test_dll_15_01_2023
                 edt.WriteMessage("\nError >> " + ex.Message);
             }
         }
-        public void list_met_listbox1()
-        {
-           
+    
+            static public List<string> ListReturn()
+            {
+                
+                return list_layout;
+            }
 
 
-        }
+        
     }
 }
 
