@@ -13,19 +13,20 @@ using System.Windows.Forms;
 
 namespace autokad_test_dll_15_01_2023
 {
-    public class Layout_WF_void
+    public class Layout_WF
     {
-        public static List<String> list_layout = new List<String>();
+        public static List<String> list_layout = new List<string>(); 
         [CommandMethod("Lay_WF_Renum")]
         //public  List<String> list_layout { get; set; }
 
 
-        public  void Cmd_Lay_Renum()
+        public static void Cmd_Lay_Renum()
         {
             Document doc = Autodesk.AutoCAD.ApplicationServices.Application.DocumentManager.MdiActiveDocument;
             Editor edt = doc.Editor;
             Database db = doc.Database;
-           
+
+            
             string oldName;
             string newName;
             
@@ -64,15 +65,26 @@ namespace autokad_test_dll_15_01_2023
                 edt.WriteMessage("\nError >> " + ex.Message);
             }
         }
-    
-            static public List<string> ListReturn()
+        // метод для обновления значений в textbox1, список листов
+        static public void ListUpdate()
+        {
+            Document doc = Autodesk.AutoCAD.ApplicationServices.Application.DocumentManager.MdiActiveDocument;
+            Editor edt = doc.Editor;
+            Database db = doc.Database;
+            using (Transaction trans = db.TransactionManager.StartTransaction())
             {
-                
-                return list_layout;
+                DBDictionary layoutDict = trans.GetObject(db.LayoutDictionaryId, OpenMode.ForRead) as DBDictionary;
+
+                foreach (DBDictionaryEntry layoutEntry in layoutDict)
+                {
+                    Layout layout = trans.GetObject((ObjectId)layoutEntry.Value, OpenMode.ForRead) as Layout;
+                    layout.UpgradeOpen();
+                }
+                trans.Commit();
             }
+           
 
-
-        
-    }
+        }
+        }
 }
 
