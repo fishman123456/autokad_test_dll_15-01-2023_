@@ -13,7 +13,7 @@ namespace autokad_test_dll_15_01_2023
 {
     public class For_WF
     {
-        [CommandMethod ("Demo")]
+        [CommandMethod ("WF_Form")]
         public void Demo()
         {
             WF_1 mf = new WF_1();

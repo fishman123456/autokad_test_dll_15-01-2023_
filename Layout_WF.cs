@@ -56,9 +56,15 @@ namespace autokad_test_dll_15_01_2023
                         //https://stackoverflow.com/questions/72216779/renaming-layout-tab-autocad-c-sharp-net
                         oldName = layout.LayoutName;
                         //var yoli_2 = new List<string>{ "-DS", "-MV", "-GS", "-PG", "-MV" };
-                       // var yoli_2 = list_layout_new[ind];
+                        // var yoli_2 = list_layout_new[ind];
                         //var yoli = list_layout_new.Count.ToString();
-                        newName = layout.TabOrder.ToString("0-")+ list_layout_new[ind].ToString();
+                        if (list_layout.Count <= list_layout_new.Count)
+                        {
+                            newName = layout.TabOrder.ToString("0-") + list_layout_new[ind].ToString();
+                        }
+                        else newName = layout.TabOrder.ToString("0-");
+
+                       // newName = layout.TabOrder.ToString("0-")+ list_layout_new[ind].ToString();
                         if (oldName != newName)
                         {
                             if (layout.ModelType != model)
@@ -69,7 +75,9 @@ namespace autokad_test_dll_15_01_2023
                         ind++;
                     }
                     trans.Commit();
-                    list_layout.Clear();
+                    
+                   //list_layout.Clear();
+                   // list_layout_new.Clear();
                     
                 }
             }
