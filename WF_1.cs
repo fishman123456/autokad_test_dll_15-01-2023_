@@ -75,11 +75,17 @@ namespace autokad_test_dll_15_01_2023
             string filename = openFileDialog1.FileName;
             // читаем файл в строку
             string fileText = System.IO.File.ReadAllText(filename);
-            List<string> list_f_t = new List<string>();
-            
             textBox1.Text = fileText + Environment.NewLine;
-            Layout_WF.list_layout_new.Add(textBox1.Lines.ToString());
+
+            //Layout_WF.list_layout_new.Clear();
+            foreach (var item in textBox1.Lines)
+            {
+                Layout_WF.list_layout_new.Add(item);
+            }
+            
             MessageBox.Show("Файл открыт");
+            MessageBox.Show(  Layout_WF.list_layout_new.Count.ToString());
+
         }
 
         private void button3_Save_file_Click(object sender, EventArgs e)
@@ -90,6 +96,13 @@ namespace autokad_test_dll_15_01_2023
             string filename = saveFileDialog1.FileName;
             // сохраняем текст в файл
             System.IO.File.WriteAllText(filename, textBox1.Text);
+            //Layout_WF.list_layout_new.Clear();
+            Layout_WF.list_layout_new.Add(textBox1.Lines.ToString());
+            Layout_WF.list_layout_new.Clear();
+            foreach (var item in textBox1.Lines)
+            {
+                Layout_WF.list_layout_new.Add(item);
+            }
             MessageBox.Show("Файл сохранен");
         }
     }

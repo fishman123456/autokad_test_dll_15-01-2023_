@@ -18,7 +18,7 @@ namespace autokad_test_dll_15_01_2023
     public class Layout_WF
     {
         public static List<String> list_layout = new List<string>();
-        public static List<String> list_layout_new = new List<string> { "111", "222", "333","444","555" };
+        public static List<String> list_layout_new = new List<string> { "000", "111", "222", "333", "444", "555" };
         
         [CommandMethod("Lay_WF_Renum")]
         //public  List<String> list_layout { get; set; }
@@ -26,6 +26,9 @@ namespace autokad_test_dll_15_01_2023
 
         public static void Cmd_Lay_Renum()
         {
+            
+           
+            
             Document doc = Autodesk.AutoCAD.ApplicationServices.Application.DocumentManager.MdiActiveDocument;
             Editor edt = doc.Editor;
             Database db = doc.Database;
@@ -48,13 +51,14 @@ namespace autokad_test_dll_15_01_2023
                         layout.UpgradeOpen();
                         list_layout.Add(layout.LayoutName.ToString());
 
-                        ind++;
+                       
                         //код для изменения имён листов------ -
                         //https://stackoverflow.com/questions/72216779/renaming-layout-tab-autocad-c-sharp-net
                         oldName = layout.LayoutName;
-                        var yoli_2 = new List<string>{ "-DS", "-MV", "-GS", "-PG", "-MV" };
+                        //var yoli_2 = new List<string>{ "-DS", "-MV", "-GS", "-PG", "-MV" };
+                       // var yoli_2 = list_layout_new[ind];
                         //var yoli = list_layout_new.Count.ToString();
-                        newName = "blad"+layout.TabOrder.ToString("0")+yoli_2.ElementAt(ind).ToString();
+                        newName = layout.TabOrder.ToString("0-")+ list_layout_new[ind].ToString();
                         if (oldName != newName)
                         {
                             if (layout.ModelType != model)
@@ -62,8 +66,11 @@ namespace autokad_test_dll_15_01_2023
                                 LayoutManager.Current.RenameLayout(oldName, newName);
                             }
                         }
+                        ind++;
                     }
                     trans.Commit();
+                    list_layout.Clear();
+                    
                 }
             }
             catch (System.Exception ex)
