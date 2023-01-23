@@ -43,19 +43,19 @@ namespace autokad_test_dll_15_01_2023
                         Layout layout = trans.GetObject((ObjectId)layoutEntry.Value, OpenMode.ForRead) as Layout;
                         layout.UpgradeOpen();
                         list_layout.Add(layout.LayoutName.ToString());
-                       
-                      
-                        //код для изменения имён листов-------
+
+
+                        //код для изменения имён листов------ -
                         //https://stackoverflow.com/questions/72216779/renaming-layout-tab-autocad-c-sharp-net
-                        //oldName = layout.LayoutName;
-                        //newName = "blad" + layout.TabOrder.ToString("00");
-                        //if (oldName != newName)
-                        //{
-                        //    if (layout.ModelType != model)
-                        //    {
-                        //        LayoutManager.Current.RenameLayout(oldName, newName);
-                        //    }
-                        //}
+                        oldName = layout.LayoutName;
+                        newName = "blad" + layout.TabOrder.ToString("00");
+                        if (oldName != newName)
+                        {
+                            if (layout.ModelType != model)
+                            {
+                                LayoutManager.Current.RenameLayout(oldName, newName);
+                            }
+                        }
                     }
                     trans.Commit();
                 }
