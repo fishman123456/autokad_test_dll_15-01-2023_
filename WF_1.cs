@@ -38,7 +38,7 @@ namespace autokad_test_dll_15_01_2023
             {
                 //if (item.ToString() != "model")
                 //{
-                    textBox1.Text = item.ToString()+'\r' + '\n';
+                    textBox1.Text = item.ToString();
                    
                 //} 
                    
@@ -49,7 +49,7 @@ namespace autokad_test_dll_15_01_2023
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Layout_WF.ListUpdate();
+            Layout_WF.Cmd_Lay_Renum();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -78,7 +78,7 @@ namespace autokad_test_dll_15_01_2023
             List<string> list_f_t = new List<string>();
             
             textBox1.Text = fileText + Environment.NewLine;
-            Layout_WF.new_list_layout.Add(textBox1.Lines.ToString());
+            Layout_WF.list_layout_new.Add(textBox1.Lines.ToString());
             MessageBox.Show("Файл открыт");
         }
 
