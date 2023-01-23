@@ -15,7 +15,8 @@ namespace autokad_test_dll_15_01_2023
 {
     public class Layout_WF
     {
-        public static List<String> list_layout = new List<string>(); 
+        public static List<String> list_layout = new List<string>();
+        public static List<String> new_list_layout = new List<string>();
         [CommandMethod("Lay_WF_Renum")]
         //public  List<String> list_layout { get; set; }
 

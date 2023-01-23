@@ -1,6 +1,7 @@
 ﻿using Autodesk.AutoCAD.ApplicationServices;
 using Autodesk.AutoCAD.DatabaseServices;
 using Autodesk.AutoCAD.EditorInput;
+using Autodesk.AutoCAD.GraphicsSystem;
 
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,8 @@ namespace autokad_test_dll_15_01_2023
         public WF_1()
         {
             InitializeComponent();
+            openFileDialog1.Filter = "Text files(*.txt)|*.txt|All files(*.*)|*.*";
+            saveFileDialog1.Filter = "Text files(*.txt)|*.txt|All files(*.*)|*.*";
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -33,7 +36,13 @@ namespace autokad_test_dll_15_01_2023
             textBox1.Text = string.Empty;
             foreach (var item in Layout_WF.list_layout)
             {
-                textBox1.Text += item.ToString()+"\n";
+                if (item.ToString() != "model")
+                {
+                    textBox1.Text += item.ToString();
+                    textBox1.Text += "\n";
+                } 
+                   
+                
             }
             // Урааа заработало 19-01-2023
         }
@@ -46,6 +55,39 @@ namespace autokad_test_dll_15_01_2023
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void button2_Load_file_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.Cancel)
+                return;
+            // получаем выбранный файл
+            string filename = openFileDialog1.FileName;
+            // читаем файл в строку
+            string fileText = System.IO.File.ReadAllText(filename);
+            textBox1.Text = fileText;
+            MessageBox.Show("Файл открыт");
+        }
+
+        private void button3_Save_file_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialog1.ShowDialog() == DialogResult.Cancel)
+                return;
+            // получаем выбранный файл
+            string filename = saveFileDialog1.FileName;
+            // сохраняем текст в файл
+            System.IO.File.WriteAllText(filename, textBox1.Text);
+            MessageBox.Show("Файл сохранен");
         }
     }
 }
