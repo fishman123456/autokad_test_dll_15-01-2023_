@@ -36,11 +36,11 @@ namespace autokad_test_dll_15_01_2023
             textBox1.Text = string.Empty;
             foreach (var item in Layout_WF.list_layout)
             {
-                if (item.ToString() != "model")
-                {
-                    textBox1.Text += item.ToString();
-                    textBox1.Text += "\n";
-                } 
+                //if (item.ToString() != "model")
+                //{
+                    textBox1.Text = item.ToString()+'\r' + '\n';
+                   
+                //} 
                    
                 
             }
@@ -49,7 +49,7 @@ namespace autokad_test_dll_15_01_2023
 
         private void button1_Click(object sender, EventArgs e)
         {
-           
+            Layout_WF.ListUpdate();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -75,7 +75,10 @@ namespace autokad_test_dll_15_01_2023
             string filename = openFileDialog1.FileName;
             // читаем файл в строку
             string fileText = System.IO.File.ReadAllText(filename);
-            textBox1.Text = fileText;
+            List<string> list_f_t = new List<string>();
+            
+            textBox1.Text = fileText + Environment.NewLine;
+            Layout_WF.new_list_layout.Add(textBox1.Lines.ToString());
             MessageBox.Show("Файл открыт");
         }
 
