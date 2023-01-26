@@ -14,6 +14,8 @@ using System.Windows.Forms;
 
 namespace autokad_test_dll_15_01_2023
 {
+    
+    
 
     public class Layout_WF
     {
@@ -60,9 +62,9 @@ namespace autokad_test_dll_15_01_2023
                         //var yoli = list_layout_new.Count.ToString();
                         if (list_layout.Count <= list_layout_new.Count)
                         {
-                            newName = layout.TabOrder.ToString("0-") + list_layout_new[ind].ToString();
+                            newName = layout.TabOrder.ToString("0+") + list_layout_new[ind].ToString();
                         }
-                        else newName = layout.TabOrder.ToString("0-");
+                        else newName = layout.TabOrder.ToString("0-0");
 
                        // newName = layout.TabOrder.ToString("0-")+ list_layout_new[ind].ToString();
                         if (oldName != newName)
