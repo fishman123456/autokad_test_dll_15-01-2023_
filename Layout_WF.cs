@@ -78,8 +78,8 @@ namespace autokad_test_dll_15_01_2023
                     }
                     trans.Commit();
                     
-                   //list_layout.Clear();
-                   // list_layout_new.Clear();
+                   list_layout.Clear();
+                    list_layout_new.Clear();
                     
                 }
             }

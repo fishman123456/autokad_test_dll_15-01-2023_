@@ -33,23 +33,13 @@ namespace autokad_test_dll_15_01_2023
 
         private void WF_1_Load(object sender, EventArgs e)
         {
-            textBox1.Text = string.Empty;
-            foreach (var item in Layout_WF.list_layout)
-            {
-                //if (item.ToString() != "model")
-                //{
-                    textBox1.Text = item.ToString();
-                   
-                //} 
-                   
-                
-            }
+           
             // Урааа заработало 19-01-2023
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Layout_WF.Cmd_Lay_Renum();
+           
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -107,6 +97,22 @@ namespace autokad_test_dll_15_01_2023
             MessageBox.Show("Файл сохранен");
             MessageBox.Show("кол-во листов новые: ", Layout_WF.list_layout_new.Count.ToString());
             MessageBox.Show("кол-во листов сущ.: ", Layout_WF.list_layout.Count.ToString());
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("вы попали в кнопку");
+           // textBox1.Text = string.Empty;
+            foreach (var item in Layout_WF.list_layout)
+            {
+                if (item.ToString() != "model")
+                {
+                textBox1.Text = item.ToString();
+
+                } 
+
+
+            }
         }
     }
 }

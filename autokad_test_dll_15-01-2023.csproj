@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="add_layer.cs" />
     <Compile Include="For_WF.cs" />
+    <Compile Include="layot_renum_2.cs" />
     <Compile Include="LayoutHernummeren.cs" />
     <Compile Include="Layout_WF.cs" />
     <Compile Include="WF_1.cs">
